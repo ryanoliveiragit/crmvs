@@ -5,14 +5,19 @@ import { defaultTheme } from "./styles/theme/default";
 import { GlobalStyle } from "./styles/global";
 import { AppContainer } from "./styles/App";
 
+import { Router } from "./routes/Router";
+import { BrowserRouter } from "react-router-dom";
+
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <AppContainer>
-        <Sidebar />
-        <h1>teste</h1>
-        <GlobalStyle />
-      </AppContainer>
+      <BrowserRouter>
+        <AppContainer>
+          <Sidebar />
+          <Router />
+          <GlobalStyle />
+        </AppContainer>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
