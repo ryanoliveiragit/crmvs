@@ -5,8 +5,14 @@ import {
   ContainerAppStatic,
   Flex,
   Header,
-  HeaderBoard
+  HeaderBoard,
+  DeashbordItems
 } from "../styles/home";
+import {IoMdOptions} from 'react-icons/io'
+import {TfiPencil} from 'react-icons/tfi'
+import {BiShareAlt} from 'react-icons/bi'
+import {AiOutlineSearch} from 'react-icons/ai'
+import {BiTrashAlt} from 'react-icons/bi'
 import { name } from "../components/utils/name";
 import { format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
@@ -35,9 +41,15 @@ export function Home() {
           </Flex>
           <HeaderBoard>
             <p>Application Statistics</p>
-            <p>Interviews</p>
+            <div>
+            <IoMdOptions />
+            <TfiPencil />
+            <BiShareAlt />
+            <AiOutlineSearch />
+            <BiTrashAlt />
+            </div>
           </HeaderBoard>
-          <div>aaa</div>
+          <DeashbordItems>aaa</DeashbordItems>
         </ContainerAppStatic>
         <ContainerInterviews>
           <Interviews title="Figma | Product Designer Interview | Chad Lee May 4, 2020 @12:30 pm - 1:00 pm" />

@@ -58,4 +58,18 @@ export const HeaderBoard = styled.div`
   font-weight: 500;
   font-size: 1rem;
   line-height: 19px;
+
+  div>svg{
+    fill: ${props => props.theme.gray};
+    margin-left: 0.6rem;
+    margin-top: .5rem;
+  }
 `;
+export const DeashbordItems = styled.div`
+  width: 100%;
+  background-color: ${props => props.theme.background};
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+
+  padding: 1.8rem 1.1rem;
+`
