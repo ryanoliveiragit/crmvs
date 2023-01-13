@@ -4,8 +4,7 @@ export const ContainerSidebar = styled.nav`
   padding: 2.87rem 0.75rem;
   text-align: center;
 
-  background-color: ${props => props.theme.blue};
-  height: 100vh;
+  background-color: ${(props) => props.theme.blue};
 
   display: flex;
   flex-direction: column;
@@ -14,6 +13,13 @@ export const ContainerSidebar = styled.nav`
     margin-bottom: 2.3rem;
     list-style: none;
   }
+`;
+export const Button = styled.button`
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: ${(props) => props.theme.white};
+  cursor: pointer;
 `;
 export const Avatar = styled.div`
   img {

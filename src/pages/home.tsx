@@ -18,12 +18,19 @@ import { format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { AppStatic } from "../components/AppStatics/AppStatics";
 import { Interviews } from "../components/Interviews/Interviews";
+import { useState } from "react";
 
 export function Home() {
   const date = new Date();
   const currentDate = format(date, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
   });
+
+  const [itens] = useState([
+    {
+      title: 'post'
+    }
+  ])
   return (
     <HomeContainer>
       <h1>Welcome {name}</h1>
@@ -49,7 +56,13 @@ export function Home() {
             <BiTrashAlt />
             </div>
           </HeaderBoard>
-          <DeashbordItems>aaa</DeashbordItems>
+          <DeashbordItems>
+            {itens.map(items => {
+              return(
+              <h1>{items.title}</h1>
+              )
+            })}
+          </DeashbordItems>
         </ContainerAppStatic>
         <ContainerInterviews>
           <Interviews title="Figma | Product Designer Interview | Chad Lee May 4, 2020 @12:30 pm - 1:00 pm" />

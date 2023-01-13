@@ -4,6 +4,7 @@ export const HomeContainer = styled.div`
   padding: 1.6rem 3.43rem;
   background-color: ${(props) => props.theme.background};
   width: 100%;
+  height: 100vh;
 
   span {
     font-style: normal;
