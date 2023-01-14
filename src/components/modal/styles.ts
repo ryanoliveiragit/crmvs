@@ -11,25 +11,55 @@ export const ContainerModal = styled.div`
   background: rgba(0, 0, 0, 0.7);
 `;
 export const ModalContent = styled.div`
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.modal};
   margin: auto;
+  border-radius: 5px;
 
-  width: 48rem;
+  width: 39rem;
   margin-top: 1.5rem;
 
-  padding: 1.4rem 1rem 8.1rem 3.6rem;
-
-  form>div {
+  padding: 1.4rem 1rem 3rem 3.6rem;
+  form > section {
     width: 100%;
-    background-color: red;
+    margin-top: 1.75rem;
     justify-items: flex-start;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  form > section > input {
+    padding: 0.8rem;
+    margin-top: 0.87rem;
+    font-size: 0.85rem;
+    width: 31rem;
+    height: 2.6rem;
+    border: none;
+    color: ${(props) => props.theme.black};
+    background-color: #ebecef;
+  }
+  form > section > button {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme.blue};
+    padding: 0.6rem 2rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  select {
+    cursor: pointer;
+    margin-top: 0.87rem;
+    font-size: 0.85rem;
+    width: 31rem;
+    height: 2.6rem;
+    padding: 2px 5px;
   }
 `;
 export const Header = styled.header`
   justify-content: space-between;
-  padding: 0rem 1rem;
   display: flex;
   align-items: center;
 
