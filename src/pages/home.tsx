@@ -20,7 +20,7 @@ import { AppStatic } from "../components/AppStatics/AppStatics";
 import { Interviews } from "../components/Interviews/Interviews";
 import { useState } from "react";
 
-export function Home({newItens}) {
+export function Home() {
   const date = new Date();
   const currentDate = format(date, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,

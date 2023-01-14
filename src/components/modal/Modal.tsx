@@ -2,11 +2,11 @@ import { useState } from "react";
 import { ContainerModal, ModalContent, Header } from "./styles";
 
 interface ModalProps {
-  closeModal: (boolean: boolean) => void;
+  closeModal: (value: boolean) => void;
   newItens: string;
 }
 
-export function Modal({ closeModal, newItens }: ModalProps) {
+export function Modal({ closeModal }: ModalProps) {
   const [newApplication, setNewApplication] = useState({ name: '', id: 0 });
   function handleCreateContract() {
     closeModal(false);
@@ -15,10 +15,6 @@ export function Modal({ closeModal, newItens }: ModalProps) {
     const value = event.target.value;
     setNewApplication({ name: value, id: newApplication.id + 1 });
   }
-  const handleSave = () => {
-    newItens([...newItens, newApplication]);
-    closeModal(false);
-  };
 
   return (
     <ContainerModal>
@@ -33,7 +29,7 @@ export function Modal({ closeModal, newItens }: ModalProps) {
               value={newApplication.name}
               onChange={handleNewApplication}
             />
-            <button onClick={handleSave}>submit</button>
+            <button>submit</button>
       </ModalContent>
     </ContainerModal>
   )

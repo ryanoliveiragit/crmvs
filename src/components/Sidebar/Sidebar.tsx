@@ -22,7 +22,7 @@ export function Sidebar() {
         <h1>{name}</h1>
 
         {isOpen && (
-            <Modal closeModal={setIsOpen}/>
+            <Modal closeModal={setIsOpen} newItens={""}/>
         )}
       </Avatar>
       <ul>
