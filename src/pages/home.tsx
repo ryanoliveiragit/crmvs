@@ -7,6 +7,7 @@ import {
   Header,
   HeaderBoard,
   DeashbordItems,
+  AplicationHeader,
 } from "../styles/home";
 import { IoMdOptions } from "react-icons/io";
 import { TfiPencil } from "react-icons/tfi";
@@ -37,7 +38,6 @@ export function Home() {
   });
 
   const { itens, setItens }: any = useContext(MyContext);
-  const [count, setCount] = useState()
 
   return (
     <HomeContainer>
@@ -65,6 +65,15 @@ export function Home() {
             </div>
           </HeaderBoard>
           <DeashbordItems>
+          <AplicationHeader>
+            <ul>
+              <li>Company</li>
+              <li>Position</li>
+              <li>Duration</li>
+              <li>Job ID#</li>
+              <li>Status</li>
+            </ul>
+          </AplicationHeader>
             {itens.map(
               (items: {
                 jobID: number;

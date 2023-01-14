@@ -7,7 +7,7 @@ interface ModalProps {
 }
 
 export function Modal({ closeModal }: ModalProps) {
-  const { itens, setItens }: any = useContext(MyContext);
+  const {itens, setItens}: any = useContext(MyContext);
   const [newICompany, setNewCompany] = useState("");
   const [newPosition, setNewPosition] = useState("");
   const [newDuration, setNewDuration] = useState("");
