@@ -6,19 +6,29 @@ import {
   Flex,
   Header,
   HeaderBoard,
-  DeashbordItems
+  DeashbordItems,
 } from "../styles/home";
-import {IoMdOptions} from 'react-icons/io'
-import {TfiPencil} from 'react-icons/tfi'
-import {BiShareAlt} from 'react-icons/bi'
-import {AiOutlineSearch} from 'react-icons/ai'
-import {BiTrashAlt} from 'react-icons/bi'
+import { IoMdOptions } from "react-icons/io";
+import { TfiPencil } from "react-icons/tfi";
+import { BiShareAlt } from "react-icons/bi";
+import { AiOutlineSearch } from "react-icons/ai";
+import { BiTrashAlt } from "react-icons/bi";
 import { name } from "../components/utils/name";
 import { format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { AppStatic } from "../components/AppStatics/AppStatics";
 import { Interviews } from "../components/Interviews/Interviews";
-import { useState } from "react";
+import {
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  ReactFragment,
+  ReactPortal,
+  useContext,
+  useState,
+} from "react";
+import { MyContext } from "../context/MyContext";
+import { Applications } from "../components/Applications/Applications";
 
 export function Home() {
   const date = new Date();
@@ -26,12 +36,9 @@ export function Home() {
     locale: ptBR,
   });
 
-  const [itens, setItens] = useState([
-    {
-      title: 'post'
-    }
-  ])
-  
+  const { itens, setItens }: any = useContext(MyContext);
+  const [count, setCount] = useState()
+
   return (
     <HomeContainer>
       <h1>Welcome {name}</h1>
@@ -43,26 +50,51 @@ export function Home() {
       <Container>
         <ContainerAppStatic>
           <Flex>
-            <AppStatic count={6} title={"Contract Roles"} />
+            <AppStatic count={0} title={"Contract Roles"} />
             <AppStatic count={12} title={"Full-Time Roles"} />
-            <AppStatic count={18} title={"Total Applications"} />
+            <AppStatic count={itens.length} title={"Total Applications"} />
           </Flex>
           <HeaderBoard>
             <p>Application Statistics</p>
             <div>
-            <IoMdOptions />
-            <TfiPencil />
-            <BiShareAlt />
-            <AiOutlineSearch />
-            <BiTrashAlt />
+              <IoMdOptions />
+              <TfiPencil />
+              <BiShareAlt />
+              <AiOutlineSearch />
+              <BiTrashAlt />
             </div>
           </HeaderBoard>
           <DeashbordItems>
-            {itens.map(items => {
-              return(
-              <h1>{items.title}</h1>
-              )
-            })}
+            {itens.map(
+              (items: {
+                jobID: number;
+                status: any;
+                duration: any;
+                position: any;
+                company: any;
+                id: Key | null | undefined;
+                title:
+                  | string
+                  | number
+                  | boolean
+                  | ReactElement<any, string | JSXElementConstructor<any>>
+                  | ReactFragment
+                  | ReactPortal
+                  | null
+                  | undefined;
+              }) => {
+                return (
+                  <Applications
+                    key={items.id}
+                    Companys={items.company}
+                    Position={items.position}
+                    Duration={items.duration}
+                    JobID={items.jobID}
+                    Status={items.status}
+                  ></Applications>
+                );
+              }
+            )}
           </DeashbordItems>
         </ContainerAppStatic>
         <ContainerInterviews>

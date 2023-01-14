@@ -68,7 +68,7 @@ export const HeaderBoard = styled.div`
 `;
 export const DeashbordItems = styled.div`
   width: 100%;
-  background-color: ${props => props.theme.background};
+  background-color: ${props => props.theme.white};
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
 

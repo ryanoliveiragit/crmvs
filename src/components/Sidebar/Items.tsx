@@ -12,34 +12,42 @@ interface NavItemProps{
     icon?: ReactNode;
     href?: string;
     label?: string;
+    id: number;
 }
 
 export const NAV_ITEMS: NavItemProps[] = [
     {
+      id: 10,
       icon: <HiOutlinePencilAlt />,
     },
     {
+      id: 20,
       label: 'sobre',
       icon: <AiOutlineInbox />,
     },
     {
-      label: 'sobre',
+      id: 30,
+      label: 'teste',
       icon: <FiBookmark />,
     },
     {
-      label: 'sobre',
+      id: 40,
+      label: 'testess',
       icon: <RxShare1 />,
     },
     {
-      label: 'sobre',
+      id: 50,
+      label: 'testesss',
       icon: <AiOutlineDownload />,
     },
     {
-      label: 'sobre',
+      id: 60,
+      label: 'testesss',
       icon: <BsPrinter />,
     },
     {
-      label: 'sobre',
+      id: 70,
+      label: 'testessss',
       icon: <BsGear />,
     },
   ];

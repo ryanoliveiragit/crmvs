@@ -7,14 +7,29 @@ import { AppContainer } from "./styles/App";
 
 import { Router } from "./routes/Router";
 import { BrowserRouter } from "react-router-dom";
+import { MyContext } from "./context/MyContext";
+import { useState } from "react";
+
 
 export function App() {
+  const [itens, setItens] = useState([
+    {
+      company: 'Apple',
+      position: 'Visual Designer',
+      duration: 'Full Time',
+      jobID: 12312,
+      id: 1,
+      status: 'Phone Interview'
+    }
+  ])
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
         <AppContainer>
-          <Sidebar />
-          <Router />
+          <MyContext.Provider value={{itens, setItens}}>
+            <Sidebar />
+            <Router />
+          </MyContext.Provider>
           <GlobalStyle />
         </AppContainer>
       </BrowserRouter>

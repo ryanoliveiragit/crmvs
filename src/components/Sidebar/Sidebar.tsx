@@ -22,13 +22,13 @@ export function Sidebar() {
         <h1>{name}</h1>
 
         {isOpen && (
-            <Modal closeModal={setIsOpen} newItens={""}/>
+            <Modal closeModal={setIsOpen}/>
         )}
       </Avatar>
       <ul>
         {NAV_ITEMS.map((items) => {
           return (
-            <li key={items.label}>
+            <li key={items.id}>
                 <Items href={items.href}><Button onClick={handleCreateContract}>{items.icon}</Button></Items>
             </li>
           );
