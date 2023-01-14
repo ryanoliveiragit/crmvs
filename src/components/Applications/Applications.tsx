@@ -20,7 +20,7 @@ export function Applications({
     <ContainerApplications>
       <ApplicationsContent>
         <ul>
-            <li>{Companys}</li>
+            <li><input type="checkbox" name="" id="" />{Companys}</li>
             <li>{Position}</li>
             <li>{Duration}</li>
             <li>{JobID}</li>

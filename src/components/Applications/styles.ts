@@ -16,6 +16,9 @@ export const ApplicationsContent = styled.div`
     font-weight: 500;
     font-size: 0.75rem;
     line-height: 14px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
     color: ${(props) => props.theme.gray};
   }

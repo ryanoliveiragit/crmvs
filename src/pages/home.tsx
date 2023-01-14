@@ -14,20 +14,13 @@ import { TfiPencil } from "react-icons/tfi";
 import { BiShareAlt } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiTrashAlt } from "react-icons/bi";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { name } from "../components/utils/name";
 import { format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { AppStatic } from "../components/AppStatics/AppStatics";
 import { Interviews } from "../components/Interviews/Interviews";
-import {
-  JSXElementConstructor,
-  Key,
-  ReactElement,
-  ReactFragment,
-  ReactPortal,
-  useContext,
-  useState,
-} from "react";
+import { useContext } from "react";
 import { MyContext } from "../context/MyContext";
 import { Applications } from "../components/Applications/Applications";
 
@@ -65,32 +58,33 @@ export function Home() {
             </div>
           </HeaderBoard>
           <DeashbordItems>
-          <AplicationHeader>
-            <ul>
-              <li>Company</li>
-              <li>Position</li>
-              <li>Duration</li>
-              <li>Job ID#</li>
-              <li>Status</li>
-            </ul>
-          </AplicationHeader>
+            <AplicationHeader>
+              <ul>
+                <li>
+                  Company <MdOutlineKeyboardArrowDown />
+                </li>
+                <li>
+                  Position <MdOutlineKeyboardArrowDown />
+                </li>
+                <li>
+                  Duration <MdOutlineKeyboardArrowDown />
+                </li>
+                <li>
+                  Job ID# <MdOutlineKeyboardArrowDown />
+                </li>
+                <li>
+                  Status <MdOutlineKeyboardArrowDown />
+                </li>
+              </ul>
+            </AplicationHeader>
             {itens.map(
               (items: {
                 jobID: number;
-                status: any;
-                duration: any;
-                position: any;
-                company: any;
-                id: Key | null | undefined;
-                title:
-                  | string
-                  | number
-                  | boolean
-                  | ReactElement<any, string | JSXElementConstructor<any>>
-                  | ReactFragment
-                  | ReactPortal
-                  | null
-                  | undefined;
+                status: string;
+                duration: string;
+                position: string;
+                company: string;
+                id: number;
               }) => {
                 return (
                   <Applications

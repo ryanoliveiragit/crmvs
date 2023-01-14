@@ -88,7 +88,11 @@ export const AplicationHeader = styled.div`
     font-weight: 500;
     font-size: 0.75rem;
     line-height: 14px;
+    gap: .5rem;
 
     color: ${(props) => props.theme.black};
+   align-items: center;
+   justify-content: flex-start;
+   display: flex;
   }
 `;
