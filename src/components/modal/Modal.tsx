@@ -3,20 +3,22 @@ import { ContainerModal, ModalContent, Header } from "./styles";
 
 interface ModalProps {
   closeModal: (boolean: boolean) => void;
+  newItens: string;
 }
 
-export function Modal({ closeModal }: ModalProps) {
-    const [newAppStatistics, setNewAppStatistics] = useState()
-
-    function handleCreateContract() {
+export function Modal({ closeModal, newItens }: ModalProps) {
+  const [newApplication, setNewApplication] = useState({ name: '', id: 0 });
+  function handleCreateContract() {
     closeModal(false);
   }
-
-  function handleNewStatistics(event: any){
-    setNewAppStatistics(event.target.value)
-    console.log(event.target.value)
+  function handleNewApplication(event: any) {
+    const value = event.target.value;
+    setNewApplication({ name: value, id: newApplication.id + 1 });
   }
-
+  const handleSave = () => {
+    newItens([...newItens, newApplication]);
+    closeModal(false);
+  };
 
   return (
     <ContainerModal>
@@ -25,17 +27,14 @@ export function Modal({ closeModal }: ModalProps) {
           <span>NEW ROLE</span>
           <button onClick={handleCreateContract}>x</button>
         </Header>
-        <form action="submit">
-          <div>
             <h1>Company</h1>
             <input
-                type="text"
-                value={newAppStatistics}
-                onChange={handleNewStatistics}    
+              type="text"
+              value={newApplication.name}
+              onChange={handleNewApplication}
             />
-          </div>
-        </form>
+            <button onClick={handleSave}>submit</button>
       </ModalContent>
     </ContainerModal>
-  );
+  )
 }

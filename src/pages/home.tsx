@@ -20,17 +20,18 @@ import { AppStatic } from "../components/AppStatics/AppStatics";
 import { Interviews } from "../components/Interviews/Interviews";
 import { useState } from "react";
 
-export function Home() {
+export function Home({newItens}) {
   const date = new Date();
   const currentDate = format(date, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
   });
 
-  const [itens] = useState([
+  const [itens, setItens] = useState([
     {
       title: 'post'
     }
   ])
+  
   return (
     <HomeContainer>
       <h1>Welcome {name}</h1>
