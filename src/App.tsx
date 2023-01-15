@@ -16,10 +16,10 @@ export function App() {
     {
       company: 'Apple',
       position: 'Visual Designer',
-      duration: 'Full Time',
+      duration: 'Full time',
       jobID: 12312,
       id: 1,
-      status: 'Phone Interview'
+      status: 'Online'
     }
   ])
   return (

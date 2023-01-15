@@ -43,9 +43,22 @@ export function Home() {
       <Container>
         <ContainerAppStatic>
           <Flex>
-            <AppStatic count={0} title={"Contract Roles"} />
-            <AppStatic count={12} title={"Full-Time Roles"} />
-            <AppStatic count={itens.length} title={"Total Applications"} />
+            <AppStatic count={itens.length} title={"Contract Roles"} />
+            <AppStatic
+              count={
+                itens.filter(
+                  (i: { duration: string }) => i.duration === "Full time"
+                ).length
+              }
+              title={"Full time Roles"}
+            />
+            <AppStatic
+              count={
+                itens.filter((i: { status: string }) => i.status === "Online")
+                  .length
+              }
+              title={"Online"}
+            />
           </Flex>
           <HeaderBoard>
             <p>Application Statistics</p>
@@ -102,10 +115,39 @@ export function Home() {
         </ContainerAppStatic>
         <ContainerInterviews>
           <Interviews title="Figma | Product Designer Interview | Chad Lee May 4, 2020 @12:30 pm - 1:00 pm" />
-          <Interviews count={6} title={"Visual Designer"} />
-          <Interviews count={4} title={"Product Designer"} />
-          <Interviews count={6} title={"Interactive Designer"} />
-          <Interviews count={2} title={"UX/ UI Designer"} />
+          <Interviews
+            count={
+              itens.filter(
+                (i: { position: string }) => i.position === "Visual Designer"
+              ).length
+            }
+            title={"Visual Designer"}
+          />
+          <Interviews
+            count={
+              itens.filter(
+                (i: { position: string }) => i.position === "Product Designer"
+              ).length
+            }
+            title={"Product Designer"}
+          />
+          <Interviews
+            count={
+              itens.filter(
+                (i: { position: string }) =>
+                  i.position === "Interactive Designer"
+              ).length
+            }
+            title={"Interactive Designer"}
+          />
+          <Interviews
+            count={
+              itens.filter(
+                (i: { position: string }) => i.position === "UX / UI Designer"
+              ).length
+            }
+            title={"UX/ UI Designer"}
+          />
         </ContainerInterviews>
       </Container>
     </HomeContainer>
