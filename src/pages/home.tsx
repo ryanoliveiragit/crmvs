@@ -61,7 +61,7 @@ export function Home() {
             />
           </Flex>
           <HeaderBoard>
-            <p>Application Statistics</p>
+            <p>Status Board</p>
             <div>
               <IoMdOptions />
               <TfiPencil />
