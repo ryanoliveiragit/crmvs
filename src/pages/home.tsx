@@ -20,7 +20,7 @@ import { format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { AppStatic } from "../components/AppStatics/AppStatics";
 import { Interviews } from "../components/Interviews/Interviews";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MyContext } from "../context/MyContext";
 import { Applications } from "../components/Applications/Applications";
 
@@ -31,6 +31,7 @@ export function Home() {
   });
 
   const { itens, setItens }: any = useContext(MyContext);
+
 
   return (
     <HomeContainer>
@@ -43,22 +44,9 @@ export function Home() {
       <Container>
         <ContainerAppStatic>
           <Flex>
-            <AppStatic count={itens.length} title={"Contract Roles"} />
-            <AppStatic
-              count={
-                itens.filter(
-                  (i: { duration: string }) => i.duration === "Full time"
-                ).length
-              }
-              title={"Full time Roles"}
-            />
-            <AppStatic
-              count={
-                itens.filter((i: { status: string }) => i.status === "Online")
-                  .length
-              }
-              title={"Online"}
-            />
+            <AppStatic count={'ffsd'} title={"Total investido"} />
+            <AppStatic count={itens.length} title={"Carteira"} />
+            <AppStatic count={itens.length} title={"% de Lucro"} />
           </Flex>
           <HeaderBoard>
             <p>Status Board</p>
@@ -74,28 +62,20 @@ export function Home() {
             <AplicationHeader>
               <ul>
                 <li>
-                  Company <MdOutlineKeyboardArrowDown />
+                  Ação <MdOutlineKeyboardArrowDown />
                 </li>
                 <li>
-                  Position <MdOutlineKeyboardArrowDown />
+                  Valor <MdOutlineKeyboardArrowDown />
                 </li>
                 <li>
-                  Duration <MdOutlineKeyboardArrowDown />
-                </li>
-                <li>
-                  Job ID# <MdOutlineKeyboardArrowDown />
-                </li>
-                <li>
-                  Status <MdOutlineKeyboardArrowDown />
+                  % de renda mensal <MdOutlineKeyboardArrowDown />
                 </li>
               </ul>
             </AplicationHeader>
             {itens.map(
               (items: {
-                jobID: number;
-                status: string;
-                duration: string;
-                position: string;
+                percentage: number;
+                value: number;
                 company: string;
                 id: number;
               }) => {
@@ -103,10 +83,8 @@ export function Home() {
                   <Applications
                     key={items.id}
                     Companys={items.company}
-                    Position={items.position}
-                    Duration={items.duration}
-                    JobID={items.jobID}
-                    Status={items.status}
+                    value={items.value}
+                    percentage={items.percentage}
                   ></Applications>
                 );
               }

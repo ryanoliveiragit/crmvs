@@ -77,7 +77,7 @@ export const DeashbordItems = styled.div`
 export const AplicationHeader = styled.div`
   ul {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 0px;
     padding: 0rem 1.1rem;
     grid-row-gap: 0px;

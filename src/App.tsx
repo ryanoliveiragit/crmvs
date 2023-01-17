@@ -15,11 +15,9 @@ export function App() {
   const [itens, setItens] = useState([
     {
       company: 'Apple',
-      position: 'Visual Designer',
-      duration: 'Full time',
-      jobID: 12312,
+      value: 10,
+      percentage: 0,
       id: 1,
-      status: 'Online'
     }
   ])
   return (

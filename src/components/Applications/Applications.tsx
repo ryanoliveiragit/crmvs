@@ -2,18 +2,14 @@ import { ContainerApplications, ApplicationsContent } from "./styles";
 
 interface ApplicationProps {
   Companys: string;
-  Position: string;
-  Duration: string;
-  JobID: number;
-  Status: string;
+  value: number;
+  percentage: number;
 }
 
 export function Applications({
   Companys,
-  Position,
-  Duration,
-  JobID,
-  Status,
+  value,
+  percentage,
 }: ApplicationProps) {
 
   return (
@@ -21,10 +17,8 @@ export function Applications({
       <ApplicationsContent>
         <ul>
             <li><input type="checkbox" name="" id="" />{Companys}</li>
-            <li>{Position}</li>
-            <li>{Duration}</li>
-            <li>{JobID}</li>
-            <li>{Status}</li>
+            <li>{value}</li>
+            <li>{percentage}</li>
         </ul>
       </ApplicationsContent>
     </ContainerApplications>
