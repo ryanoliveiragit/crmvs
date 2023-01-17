@@ -11,7 +11,6 @@ export function Sidebar() {
     function handleCreateContract() {
         setIsOpen(true)
     }
-
   return (
     <ContainerSidebar>
       <Avatar>
